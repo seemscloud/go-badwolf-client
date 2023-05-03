@@ -3,6 +3,7 @@ package protocol
 func PingHandler() {
 	conn := connCreate()
 	for {
-		connWrite(&conn, PingPongBuilder())
+		messageBytes := PingPongBuilder()
+		connWrite(&conn, messageBytes)
 	}
 }
