@@ -3,10 +3,10 @@ package protocol
 import "time"
 
 func PingHandler() {
-	conn := connCreate()
+	conn := createConnection()
 	for {
 		messageBytes := PingPongBuilder()
-		connWrite(&conn, messageBytes)
+		sendData(&conn, messageBytes)
 
 		time.Sleep(time.Second)
 	}
